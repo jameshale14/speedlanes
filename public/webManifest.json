@@ -4,7 +4,7 @@
     "start_url": ".",
     "display": "standalone",
     "background_color": "#f2f2f2",
-    "theme_color": "#9c27b0",
+    "theme_color": "#673ab7",
     "description": "A simple web app to show a QR Code",
     "icons": [{
       "src": "images/logo.png",
