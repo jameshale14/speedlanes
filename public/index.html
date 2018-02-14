@@ -23,8 +23,8 @@
   <script defer src="lib/jquery.min.js"></script>
   <script defer src="lib/qrcode.min.js"></script>
   <script defer src="js/index.js"></script>
-  <link rel="stylesheet" href="lib/material.min.css" media = "all"/>
-  <link rel="stylesheet" href="lib/material_icons.css" media = "all"/>
+  <link rel="stylesheet" href="lib/material.min.css" media="all" />
+  <link rel="stylesheet" href="lib/material_icons.css" media="all" />
   <script defer src="lib/material.min.js"></script>
 
 </head>
@@ -32,8 +32,9 @@
 <body style="overscroll-behavior-y: contain;" onload="init()">
   <div class="mdl-layout mdl-layout--fixed-header mdl-js-layout">
     <header class="mdl-layout__header">
-      <div class="mdl-layout__header-row">
-        <span class="mdl-layout__title">Speedlanes</span>
+      <button class="mdl-layout__drawer-button"><img style="height: 30px; width:30px;margin-bottom:20px;"src="images/logo.png"></button>
+      <div class="mdl-layout__header-row">     
+          <span class="mdl-layout__title">Speedlanes</span>
         <div class="mdl-layout-spacer"></div>
         <!-- Icon button -->
         <button id="changebtn" class="mdl-button mdl-js-button mdl-button--icon" onclick="changeMode()">
