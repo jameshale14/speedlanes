@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#9c27b0">
+
+  <title>Speedlanes</title>
+
+  <link rel="manifest" href="webManifest.json" />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/4.9.1/firebase-app.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <!-- <script defer src="/__/firebase/4.9.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.9.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/4.9.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/4.9.1/firebase-storage.js"></script> -->
+  <!-- initialize the SDK after all desired features are loaded -->
+  <script defer src="/__/firebase/init.js"></script>
+  <script defer src="lib/jquery.min.js"></script>
+  <script defer src="lib/qrcode.min.js"></script>
+  <script defer src="js/index.js"></script>
+  <link rel="stylesheet" href="lib/material.min.css" media = "all"/>
+  <link rel="stylesheet" href="lib/material_icons.css" media = "all"/>
+  <script defer src="lib/material.min.js"></script>
+
+</head>
+
+<body onload="init()">
+  <div class="mdl-layout mdl-layout--fixed-header mdl-js-layout">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout__title">Speedlanes</span>
+        <div class="mdl-layout-spacer"></div>
+        <!-- Icon button -->
+        <button id="changebtn" class="mdl-button mdl-js-button mdl-button--icon" onclick="changeMode()">
+          <i class="material-icons">mode_edit</i>
+        </button>
+        <!-- Icon button -->
+        <button id="cancelbtn" class="mdl-button mdl-js-button mdl-button--icon" onclick="changeMode()">
+          <i class="material-icons">clear</i>
+        </button>
+      </div>
+    </header>
+
+    <main class="mdl-layout__content">
+
+      <div style="margin: 0 auto 0 auto; width:250px">
+        <!-- <form action="generate()"> -->
+        <div class="mdl-textfield mdl-js-textfield" id="qrvaldiv">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="qrval">
+          <label class="mdl-textfield__label" for="qrval">Enter QR number</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+
+        <!-- </form> -->
+        <div style="margin: 0 auto; text-align: center">
+          <button id="generate" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="generate()">Generate</button>
+        </div>
+      </div>
+      <div id="qrcode" style="margin: 0 auto; width:300px; height:300px; margin-top:15px;"></div>
+      <h5 style="text-align: center" id="qrcodevalue"></h5>
+    </main>
+  </div>
+</body>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then(function () {
+        console.log("Service Worker Registered");
+      });
+  }
+</script>
+
+</html>

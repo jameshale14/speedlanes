@@ -1,0 +1,19 @@
+{
+    "name": "Speedlanes",
+    "short_name": "Speedlanes",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#f2f2f2",
+    "theme_color": "#9c27b0",
+    "description": "A simple web app to show a QR Code",
+    "icons": [{
+      "src": "images/logo.png",
+      "sizes": "48x48 72x72 96x96 144x144 168x168 192x192 512x512",
+      "type": "image/png"
+    }],
+    "orientation": "portrait",
+    "prefer_related_applications": false,
+    "related_applications": [{
+      "platform": "web"
+    }]
+  }
