@@ -2,6 +2,7 @@ self.addEventListener('install', function (e) {
     e.waitUntil(
       caches.open('speedlane').then(function (cache) {
         return cache.addAll([
+          '/',
           '/index.html',
           '/js/index.js',
           '/images/logo.png',
