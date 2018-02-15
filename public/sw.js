@@ -1,6 +1,6 @@
 self.addEventListener('install', function (e) {
     e.waitUntil(
-      caches.open('speedlane').then(function (cache) {
+      caches.open('speedlane-v1.1').then(function (cache) {
         return cache.addAll([
           '/',
           '/index.html',

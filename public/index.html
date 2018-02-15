@@ -32,18 +32,27 @@
 <body style="overscroll-behavior-y: contain;" onload="init()">
   <div class="mdl-layout mdl-layout--fixed-header mdl-js-layout">
     <header class="mdl-layout__header">
-      <button class="mdl-layout__drawer-button"><img style="height: 30px; width:30px;margin-bottom:20px;"src="images/logo.png"></button>
-      <div class="mdl-layout__header-row">     
-          <span class="mdl-layout__title">Speedlanes</span>
+      <button id="infobutton" class="mdl-layout__drawer-button dialog-button">
+        <img style="height: 30px; width:30px;margin-bottom:20px;" src="images/logo.png">
+      </button>
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout__title">Speedlanes</span>
         <div class="mdl-layout-spacer"></div>
         <!-- Icon button -->
         <button id="changebtn" class="mdl-button mdl-js-button mdl-button--icon" onclick="changeMode()">
           <i class="material-icons">mode_edit</i>
         </button>
+        <!-- Edit button Tooltip -->
+        <div class="mdl-tooltip" data-mdl-for="changebtn">
+          Edit
+        </div>
         <!-- Icon button -->
         <button id="cancelbtn" class="mdl-button mdl-js-button mdl-button--icon" onclick="changeMode()">
           <i class="material-icons">clear</i>
         </button>
+        <div class="mdl-tooltip" data-mdl-for="cancelbtn">
+          Cancel
+        </div>
       </div>
     </header>
 
@@ -66,6 +75,42 @@
       <h5 style="text-align: center" id="qrcodevalue"></h5>
     </main>
   </div>
+
+  <!-- A lovely dialog popup thingy :) -->
+  <dialog class="mdl-dialog">
+    <h6 class="mdl-dialog__title">Speedlanes</h6>
+    <div class="mdl-dialog__content">
+      <p>Version 1.1 &copy; James Hale 2018 </p>
+      <ul>
+        <li>QRCode.js by davidshimjs under MIT license -
+          <a href="https://github.com/davidshimjs/qrcodejs">GitHub</a>
+        </li>
+        <li>Google Material Design Light -
+          <a href="https://getmdl.io/">Info</a>
+        </li>
+        <li>
+          Lovely Logo -
+          <a href="http://moziru.com/explore/Snail%20clipart%20fast%20animal/#go_post_3941_snail-clipart-fast-animal-11.png">Source</a>
+        </li>
+      </ul>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="button" class="mdl-button close">Close</button>
+    </div>
+  </dialog>
+  <script>
+    var dialog = document.querySelector('dialog');
+    var showDialogButton = document.querySelector('#infobutton');
+    if (!dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    showDialogButton.addEventListener('click', function () {
+      dialog.showModal();
+    });
+    dialog.querySelector('.close').addEventListener('click', function () {
+      dialog.close();
+    });
+  </script>
 </body>
 
 <script>
