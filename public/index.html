@@ -29,7 +29,9 @@
 
 </head>
 
-<body style="overscroll-behavior-y: contain;" onload="init()">
+<!-- <body style="overscroll-behavior-y: contain;" onload="init()"> -->
+
+<body onload="init()">
   <div class="mdl-layout mdl-layout--fixed-header mdl-js-layout">
     <header class="mdl-layout__header">
       <button id="infobutton" class="mdl-layout__drawer-button dialog-button">
@@ -43,16 +45,16 @@
           <i class="material-icons">mode_edit</i>
         </button>
         <!-- Edit button Tooltip -->
-        <div class="mdl-tooltip" data-mdl-for="changebtn">
+        <!-- <div class="mdl-tooltip" data-mdl-for="changebtn">
           Edit
-        </div>
+        </div> -->
         <!-- Icon button -->
         <button id="cancelbtn" class="mdl-button mdl-js-button mdl-button--icon" onclick="changeMode()">
           <i class="material-icons">clear</i>
         </button>
-        <div class="mdl-tooltip" data-mdl-for="cancelbtn">
+        <!-- <div class="mdl-tooltip" data-mdl-for="cancelbtn">
           Cancel
-        </div>
+        </div> -->
       </div>
     </header>
 
@@ -80,7 +82,7 @@
   <dialog class="mdl-dialog">
     <h6 class="mdl-dialog__title">Speedlanes</h6>
     <div class="mdl-dialog__content">
-      <p>Version 1.1 &copy; James Hale 2018 </p>
+      <p>Version 1.2 &copy; James Hale 2018 </p>
       <ul>
         <li>QRCode.js by davidshimjs under MIT license -
           <a href="https://github.com/davidshimjs/qrcodejs">GitHub</a>

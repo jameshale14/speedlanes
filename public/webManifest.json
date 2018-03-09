@@ -12,8 +12,5 @@
       "type": "image/png"
     }],
     "orientation": "portrait",
-    "prefer_related_applications": false,
-    "related_applications": [{
-      "platform": "web"
-    }]
+    "prefer_related_applications": false
   }
