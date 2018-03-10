@@ -1,4 +1,4 @@
-var staticCacheName = 'speedlane-v1.2';
+var staticCacheName = 'speedlane-v1.2';  // Update this to refresh the caches for future updates
 
 var filesToCache = [
   '/',
@@ -29,6 +29,7 @@ self.addEventListener('fetch', function (event) {
   );
 });
 
+// A new service worker has been found - delete the caches of the old service workers and only use the new one
 self.addEventListener('activate', function (event) {
   console.log('Activating new service worker...');
 

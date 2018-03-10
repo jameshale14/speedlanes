@@ -29,8 +29,6 @@
 
 </head>
 
-<!-- <body style="overscroll-behavior-y: contain;" onload="init()"> -->
-
 <body onload="init()">
   <div class="mdl-layout mdl-layout--fixed-header mdl-js-layout">
     <header class="mdl-layout__header">
@@ -40,26 +38,19 @@
       <div class="mdl-layout__header-row">
         <span class="mdl-layout__title">Speedlanes</span>
         <div class="mdl-layout-spacer"></div>
-        <!-- Icon button -->
+        <!-- Edit button -->
         <button id="changebtn" class="mdl-button mdl-js-button mdl-button--icon" onclick="changeMode()">
           <i class="material-icons">mode_edit</i>
         </button>
-        <!-- Edit button Tooltip -->
-        <!-- <div class="mdl-tooltip" data-mdl-for="changebtn">
-          Edit
-        </div> -->
-        <!-- Icon button -->
+        <!-- Cancel button -->
         <button id="cancelbtn" class="mdl-button mdl-js-button mdl-button--icon" onclick="changeMode()">
           <i class="material-icons">clear</i>
         </button>
-        <!-- <div class="mdl-tooltip" data-mdl-for="cancelbtn">
-          Cancel
-        </div> -->
       </div>
     </header>
 
     <main class="mdl-layout__content">
-
+      <!-- Main content goes here -->
       <div style="margin: 0 auto 0 auto; width:250px">
         <!-- <form action="generate()"> -->
         <div class="mdl-textfield mdl-js-textfield" id="qrvaldiv">
@@ -100,7 +91,9 @@
       <button type="button" class="mdl-button close">Close</button>
     </div>
   </dialog>
+
   <script>
+    // Show the popup when the icon is tapped
     var dialog = document.querySelector('dialog');
     var showDialogButton = document.querySelector('#infobutton');
     if (!dialog.showModal) {
@@ -113,9 +106,11 @@
       dialog.close();
     });
   </script>
+
 </body>
 
 <script>
+  // Service worker registration code
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
       .register('/sw.js')
