@@ -54,7 +54,8 @@ function getQrVal() {
 }
 
 // Generate a QR code, or clear if the QR code is empty
-function generate() {
+function generate(event) {
+    event.preventDefault();
     var qrval = document.getElementById("qrval").value;
     if (qrval !== null && qrval !== "undefined" && qrval !== "") {
         createCode(qrval);

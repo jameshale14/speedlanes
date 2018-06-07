@@ -1,5 +1,9 @@
 # Changelog 
 
+## Version 1.3
+- Can create QR code by pressing enter button instead of generate
+
+
 ## Version 1.2
 - Removed tooltips, they were annoying because they got stuck on a touchscreen
 - Re-enabled pull-to-refresh so the app can update. Fixed the offline refresh showing a broken offline screen.
