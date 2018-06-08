@@ -2,6 +2,7 @@
 
 ## Version 1.3
 - Can create QR code by pressing enter button instead of generate
+- Changed input type to number, so you can use numeric keypads - woohoo!
 
 
 ## Version 1.2
