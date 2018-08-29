@@ -1,4 +1,4 @@
-const staticCacheName = 'speedlane-v1.2';  // Update this to refresh the caches for future updates
+const staticCacheName = 'speedlane-v1.3.1';  // Update this to refresh the caches for future updates
 
 const filesToCache = [
   '/',
