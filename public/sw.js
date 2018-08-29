@@ -1,6 +1,6 @@
-var staticCacheName = 'speedlane-v1.2';  // Update this to refresh the caches for future updates
+const staticCacheName = 'speedlane-v1.2';  // Update this to refresh the caches for future updates
 
-var filesToCache = [
+const filesToCache = [
   '/',
   '/index.html',
   '/js/index.js',
@@ -33,7 +33,7 @@ self.addEventListener('fetch', function (event) {
 self.addEventListener('activate', function (event) {
   console.log('Activating new service worker...');
 
-  var cacheWhitelist = [staticCacheName];
+  const cacheWhitelist = [staticCacheName];
 
   event.waitUntil(
     caches.keys().then(function (cacheNames) {

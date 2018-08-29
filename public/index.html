@@ -149,8 +149,8 @@
 
   <script>
     // Show the popup when the icon is tapped
-    var dialog = document.querySelector('dialog');
-    var showDialogButton = document.querySelector('#infobutton');
+    const dialog = document.querySelector('dialog');
+    const showDialogButton = document.querySelector('#infobutton');
     if (!dialog.showModal) {
       dialogPolyfill.registerDialog(dialog);
     }
