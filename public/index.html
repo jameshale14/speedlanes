@@ -76,7 +76,8 @@
 
         </form>
         <div style="margin: 0 auto; text-align: center">
-          <button id="generate" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="generate(event)">Generate</button>
+          <button id="generate" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+            onclick="generate(event)">Generate</button>
         </div>
       </div>
       <div id="qrcode" style="margin: 0 auto; width:300px; height:300px; margin-top:15px;"></div>
@@ -113,53 +114,44 @@
   </dialog>
 
   <script>
-    let installPromptEvent;
-    document.querySelector('#install-button').disabled = true;
+    let installPromptEvent
+    const installButton = document.querySelector('#install-button')
+
+    installButton.style.display = "none"
+    installButton.disabled = true
+
     window.addEventListener('beforeinstallprompt', (event) => {
       // Prevent Chrome <= 67 from automatically showing the prompt
-      event.preventDefault();
+      event.preventDefault()
+      console.log('beforeinstallprompt')
       // Stash the event so it can be triggered later.
-      installPromptEvent = event;
+      installPromptEvent = event
       // Update the install UI to notify the user app can be installed
-      document.querySelector('#install-button').disabled = false;
-    });
+      installButton.disabled = false
+      installButton.style.display = "block"
+    })
 
-    document.querySelector('#install-button').addEventListener('click', () => {
+    installButton.addEventListener('click', () => {
       // Update the install UI to remove the install button
       if (installPromptEvent) {
-        document.querySelector('#install-button').disabled = true;
+        installButton.style.display = "none"
+        installButton.disabled = true
         // Show the modal add to home screen dialog
-        installPromptEvent.prompt();
+        installPromptEvent.prompt()
         // Wait for the user to respond to the prompt
         installPromptEvent.userChoice.then((choice) => {
           if (choice.outcome === 'accepted') {
-            console.log('User accepted the A2HS prompt');
+            console.log('User accepted the A2HS prompt')
           } else {
-            console.log('User dismissed the A2HS prompt');
+            console.log('User dismissed the A2HS prompt')
           }
           // Clear the saved prompt since it can't be used again
-          installPromptEvent = null;
-        });
+          installPromptEvent = null
+        })
       } else {
-        console.log("cannot add to homescreen on this device");
+        console.log("cannot add to homescreen on this device")
       }
-    });
-  </script>
-
-
-  <script>
-    // Show the popup when the icon is tapped
-    const dialog = document.querySelector('dialog');
-    const showDialogButton = document.querySelector('#infobutton');
-    if (!dialog.showModal) {
-      dialogPolyfill.registerDialog(dialog);
-    }
-    showDialogButton.addEventListener('click', function () {
-      dialog.showModal();
-    });
-    dialog.querySelector('.close').addEventListener('click', function () {
-      dialog.close();
-    });
+    })
   </script>
 
 </body>
@@ -169,9 +161,9 @@
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
       .register('/sw.js')
-      .then(function () {
-        console.log("Service Worker Registered");
-      });
+      .then(() => {
+        console.log("Service Worker Registered")
+      })
   }
 </script>
 
